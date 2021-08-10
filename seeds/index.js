@@ -21,24 +21,24 @@ const sample = array => array[Math.floor(Math.random() * array.length)];
 
 const seedDB = async () => {
     await Campground.deleteMany({});
-    for (let i = 0; i < 50; i++) {
-        const random1000 = Math.floor(Math.random() * 1000);
-        const price = Math.floor(Math.random() * 20) + 10;
-        const camp = new Campground({
-            author: '60c1f1e474e24b2f94e76183',
-            location: `${cities[random1000].city}, ${cities[random1000].state}`,
-            title: `${sample(descriptors)} ${sample(places)}`,
-            images: [
-                {
-                    url: 'https://res.cloudinary.com/djnzvyfrb/image/upload/v1628442842/YelpCamp/huqlrpg2g9vlr0j7d0vd.png',
-                    filename: 'YelpCamp/huqlrpg2g9vlr0j7d0vd'
-                }
-            ],
-            description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque est doloremque totam iste officia tempora commodi? Nesciunt est iure perspiciatis assumenda quidem blanditiis ex eveniet ipsum! Corrupti ut sapiente aut!',
-            price
-        })
-        await camp.save();
-    }
+    // for (let i = 0; i < 50; i++) {
+    //     const random1000 = Math.floor(Math.random() * 1000);
+    //     const price = Math.floor(Math.random() * 20) + 10;
+    //     const camp = new Campground({
+    //         author: '60c1f1e474e24b2f94e76183',
+    //         location: `${cities[random1000].city}, ${cities[random1000].state}`,
+    //         title: `${sample(descriptors)} ${sample(places)}`,
+    //         images: [
+    //             {
+    //                 url: 'https://res.cloudinary.com/djnzvyfrb/image/upload/v1628442842/YelpCamp/huqlrpg2g9vlr0j7d0vd.png',
+    //                 filename: 'YelpCamp/huqlrpg2g9vlr0j7d0vd'
+    //             }
+    //         ],
+    //         description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque est doloremque totam iste officia tempora commodi? Nesciunt est iure perspiciatis assumenda quidem blanditiis ex eveniet ipsum! Corrupti ut sapiente aut!',
+    //         price
+    //     })
+    //     await camp.save();
+    // }
 }
 
 seedDB().then(() => {

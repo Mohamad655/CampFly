@@ -7,7 +7,12 @@
         <div class="card" mb-3>
             <div class="row">
                 <div class="col-md-4">
-                    <img class="img-fluid" alt="" src="<%=campground.images[0].url%>">
+                    <% if(campground.images.length>0){ %>
+                        <img class="img-fluid" alt="" src="<%=campground.images[0].url%>">
+                        <% }else{ %>
+                            <img class="img-fluid" alt="no"
+                                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQJ7oka1Shx4WugBk4022ecxU6_3yZg6QLYLw&usqp=CAU">
+                            <% } %>
                 </div>
                 <div class="col-md-8">
                     <div class="card-body">
